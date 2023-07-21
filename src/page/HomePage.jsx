@@ -1,14 +1,16 @@
-import React from 'react'
+import React from "react";
 import { Navbar } from "../components/index";
+import Query from "../components/Query";
 
 const HomePage = () => {
   return (
     <>
+      <Navbar />
       <div>
-        <Navbar />
+        <Query />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

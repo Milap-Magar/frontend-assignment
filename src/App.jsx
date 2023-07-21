@@ -1,14 +1,25 @@
-import React from "react"
-import { Route, Routes } from "react-router-dom"
-import HomePage from "./page/HomePage";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Card, Navbar } from "./components";
+import { useQuery } from "@tanstack/react-query";
 
-function App() {
+const App = () => {
+    const { isLoading, error, data } = useQuery({
+      queryKey: ['repoData'],
+      queryFn: () =>
+        fetch('https://fakestoreapi.com/products').then(
+          (res) => res.json(),
+        ), 
+    })
+  if (isLoading) return 'Loading...'
 
-  return (
-    <Routes>
-      <Route path="/" element={ <HomePage /> } />
-    </Routes>
-  )
-}
+  if (error) return 'An error has occurred: ' + error.message
 
-export default App
+  return (  
+    <Router>
+      <Navbar />
+      <Card data={data} />
+    </Router>
+  );
+};
+export default App;
