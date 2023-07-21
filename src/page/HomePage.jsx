@@ -1,15 +1,13 @@
 import React from "react";
-import { Navbar } from "../components/index";
-import Query from "../components/Query";
+import { Link } from "react-router-dom";
+import { Card, Navbar } from "../components/index";
 
-const HomePage = () => {
+const HomePage = ({ data }) => {
   return (
-    <>
+    <Link to={'/'}>
       <Navbar />
-      <div>
-        <Query />
-      </div>
-    </>
+      <Card data={data} />
+    </Link>
   );
 };
 
