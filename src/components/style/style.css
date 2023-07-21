@@ -1,0 +1,7 @@
+.image-conatiner{
+    transition: width 0.3s ease;
+}
+.image-conatiner:hover img{
+    scale: 1.3;
+    transition: ease-in-out;
+}

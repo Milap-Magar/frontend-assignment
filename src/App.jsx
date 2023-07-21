@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import HomePage from "./page/HomePage";
+import { ProductDetails } from "./components";
 
 const App = () => {
   const { isLoading, error, data } = useQuery({
@@ -15,7 +16,10 @@ const App = () => {
 
   return (
     <Router>
-      <HomePage data={data} />
+      <Routes>
+        <Route path={"/"} element={<HomePage data={data} />} />
+        <Route path={"/products/:id"} element={<ProductDetails />} />
+      </Routes>
     </Router>
   );
 };

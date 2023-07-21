@@ -1,9 +1,0 @@
-.image-conatiner{
-    transition: width 0.3s ease;
-}
-.image-conatiner:hover img{
-    border: none;   
-    height: auto;
-    width: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
