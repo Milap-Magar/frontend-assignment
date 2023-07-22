@@ -2,6 +2,6 @@
     transition: width 0.3s ease;
 }
 .image-conatiner:hover img{
-    scale: 1.3;
+    scale: 1.2;
     transition: ease-in-out;
 }

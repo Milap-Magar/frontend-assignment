@@ -1,38 +1,59 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useParams } from "react-router-dom";
+import "../components/style/style.css";
+import { Button } from "../components";
 
 const ProductPage = ({ products }) => {
-    console.log(products[1].image);
+  const { id } = useParams();
+
+  const selectedProduct = products.find(
+    (product) => product.id === parseInt(id)
+  );
+
+  if (!selectedProduct) {
+    return <div>Product not found.</div>;
+  }
+
   return (
     <>
-      <section className="h-fit rounded-xl w-[80%] md:w-[70%] lg:w-[50%] bg-slate-300 absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-40%] md:translate-y-[-50%]">
-        <div>
-          {products.map((product, index) => (
-            <div key={index}>
-              <div className="flex float-left p-2">
-                <Link to={"/"}>
-                  <IoMdArrowRoundBack className="w-8 h-6" />
-                </Link>
-              </div>
-              <div className="w-[85%] md:w-[85%] lg:w-[90%]  m-auto px-2 py-4 my-2]">
-                <div className="pb-4">
-                  <img
-                    className="w-[60%] h-56 lg:h-72 m-auto rounded-lg mix-blend-multiply"
-                    src={products[1].image}
-                    alt={products[1].title}
-                  />
-                </div>
-                <h6 className="font-semibold h-8 md:h-8 mb-2">
-                  {products[1].title}
-                </h6>
-                <p className="font-bold py-2 text-lg">${products[1].price}</p>
-                <p className="text-sm md:text-base md:py-8">
-                  {products[1].description}
+      <section className="rounded-xl w-full h-screen gird grid-cols-1 md:grid-cols-2 bg-slate-100 absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-40%] md:translate-y-[-50%]">
+        <div className="flex justify-center md:justify-start">
+          <div className="flex p-2">
+            <Link to="/">
+              <IoMdArrowRoundBack className="w-8 h-6 absolute left-2 top-10" />
+            </Link>
+          </div>
+          <div>
+            <figure className="image-conatiner grid items-center justify-start md:ms-16">
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.title}
+                className="w-[230px] md:w-[400px] h-[70%] mix-blend-multiply"
+              />
+            </figure>
+            <div >
+              <article className="flex flex-col w-[60%] items-start absolute justify-center bottom-0 md:right-0 top-56 md:top-0 text-start">
+                <span className="font-extrabold text-3xl font-mono">
+                  Product:{" "}
+                </span>
+                <h2 className="font-mono text-lg mb-8">
+                  {selectedProduct.title}
+                </h2>
+                <span className="font-extrabold text-3xl font-mono">
+                  Product Description:{" "}
+                </span>
+                <p className="font-mono text-sm mb-5">
+                  {selectedProduct.description}
                 </p>
-              </div>
+                <p className="font-mono text-base mb-5">
+                  Price: <del className="mr-4">${selectedProduct.price}</del>$
+                  {selectedProduct.price - (selectedProduct.price % 15)}
+                </p>
+                <Button />
+              </article>
             </div>
-          ))}
+          </div>
         </div>
       </section>
     </>
