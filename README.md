@@ -10,7 +10,7 @@
 - CSS - Cascading Style Sheet
 
 # Summary
-In this project, I utilized Tailwind CSS, React, and Redux to create a dynamic web application. Tailwind CSS offered a modern and lightweight design and along with React facilitated a responsive front-end with smooth navigation. 
+In this project, I utilized Tailwind CSS and React to create a dynamic web application. Tailwind CSS offered a modern and lightweight design and along with React facilitated a responsive front-end with smooth navigation. 
 Redux ensured robust state management and clean code.
 Real-time data was integrated via APIs, enhancing user experience. 
 
