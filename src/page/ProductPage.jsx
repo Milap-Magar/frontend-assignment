@@ -33,7 +33,7 @@ const ProductPage = ({ products }) => {
               />
             </figure>
             <div >
-              <article className="flex flex-col w-[60%] items-start absolute justify-center bottom-0 md:right-0 top-56 md:top-0 text-start">
+              <article className="flex flex-col w-[60%] items-start absolute justify-center bottom-0 md:right-0 top-[70%] md:top-0 text-start">
                 <span className="font-extrabold text-3xl font-mono">
                   Product:{" "}
                 </span>
