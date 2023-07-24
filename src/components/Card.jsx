@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const Card = ({ data }) => {
   return (
-    <section className="section-h h-[100%] w-[100%] bg-cyan-200 pt-2 grid md:grid-cols-3 lg:grid-cols-4~ justify-center items-center gap-5 overflow-hidden">
+    <section className="section-h h-[100%] w-[100%] bg-cyan-200 pt-2 grid md:grid-cols-3 lg:grid-cols-4 justify-center items-center gap-5 overflow-hidden">
       {data.map((item, index) => (
         <div key={index}>
           <div className="w-[85%] md:w-[80%] lg:w-[90%] bg-white shadow-2xl shadow-cyan-700 m-auto px-2 py-4 text-center my-2 rounded-lg cursor-pointer">

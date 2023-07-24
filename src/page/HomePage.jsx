@@ -4,7 +4,6 @@ import { Card, Navbar, SearchResults } from "../components/index";
 
 const HomePage = ({ data }) => {
   const [results, setResults] = useState([]);
-
   return (
     <>
       <Link to={"/"}>

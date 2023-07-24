@@ -27,3 +27,4 @@ Real-time data was integrated via APIs, enhancing user experience.
 
 # Further Queries:
 - milapmagar12@gmail.com
+- readonlypls@gmail.com
