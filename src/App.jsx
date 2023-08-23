@@ -14,7 +14,7 @@ const App = () => {
   });
 
   if (isLoading) return <Loader />;
-  if (error) return "An error has occurred: " + error.message;
+  if (error) return "An error has occurred in the following part: " + error.message;
 
   return (
     <Router>
